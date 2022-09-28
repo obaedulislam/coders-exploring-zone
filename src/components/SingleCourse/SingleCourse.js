@@ -1,7 +1,8 @@
 import React from 'react';
 import './SingleCourse.css'
 
-const SingleCourse = ({course}) => {
+const SingleCourse = ({course, handleSeesionTime}) => {
+
     const{id, name, image, age, time} = course;
     return (
         <div className='p-3 bg-white shadow-lg rounded-lg'>
@@ -15,7 +16,7 @@ const SingleCourse = ({course}) => {
                 <h4 className='font-semibold mt-2'>Session Time: {time}</h4>
             </div>
             <div className="add-list mt-3">
-                <button className="btn btn-sm w-full">Add to List</button>
+                <button onClick={() => handleSeesionTime(time)} className="btn btn-sm w-full">Add to List</button>
             </div>
         </div>
     );
