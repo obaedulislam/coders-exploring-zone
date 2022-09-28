@@ -1,12 +1,12 @@
 import './App.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCartArrowDown } from '@fortawesome/free-solid-svg-icons';
+import AllCourses from './components/AllCourses/AllCourses';
+import UserDetails from './components/UserDetails/UserDetails';
 
 function App() {
   return (
-    <div className="App">
-      <button className="btn">Button</button>
-      
+    <div className="App grid grid-cols-12 h-full ">
+      <AllCourses></AllCourses>
+      <UserDetails></UserDetails>
     </div>
   );
 }
