@@ -38,7 +38,7 @@ const UserDetails = ({timeOfSession}) => {
             <div className="add-break mt-5">
                 <div className="break-btn flex justify-between">
                     <div className="second-btn">
-                        <button className=' w-12 h-12 font-bold transition delay-200 ease-in-out text-black hover:bg-orange-100 rounded-full bg-[#F8AF23]'><span onClick={} className='text-lg'>10</span><span className='text-sm'>s</span></button>
+                        <button className=' w-12 h-12 font-bold transition delay-200 ease-in-out text-black hover:bg-orange-100 rounded-full bg-[#F8AF23]'><span  className='text-lg'>10</span><span className='text-sm'>s</span></button>
                     </div>
                     {/* Button End */}
                      
