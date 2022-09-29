@@ -2,11 +2,11 @@ import React from 'react';
 import logo from './logo.png'
 const Header = () => {
     return (
-        <div className='header flex align-middle '>
+        <div className='header flex items-center '>
             <div className="logo mr-3">
-                <img className='w-12 h-12' src={logo} alt="Logo"  />
+                <img className='lg:w-12 lg:h-12 md:h-8 md:w-8' src={logo} alt="Logo"  />
             </div>
-            <h1 className='uppercase text-3xl font-bold text-[#3F3679] mt-2 tracking-tighter'>Coders Exploring Zone</h1>
+            <h1 className='uppercase lg:text-3xl md:text-xl sm:text-md font-bold text-[#3F3679]  tracking-tighter'>Coders Exploring Zone</h1>
         </div>
     );
 };

@@ -17,11 +17,11 @@ const AllCourses = ({handleSeesionTime}) => {
 
 
     return (
-        <div className='p-20 col-span-9 bg-orange-100 h-[100%]'>
+        <div className='lg:px-20 md:px-8 sm:px-5 px-3 lg:py-20  py-8  md:col-span-9 col-span-12 bg-orange-100 h-[100%] overflow-hidden'>
             <Header></Header>
-            <h2 className='text-2xl font-semibold text-black mt-5'>Test Your Coding Skill Today</h2>
+            <h2 className='lg:text-2xl md:text-lg sm:text-md font-semibold text-black lg:mt-5 mt-3'>Test Your Coding Skill Today</h2>
 
-            <div className="all-courses-continer grid grid-cols-3 gap-5 shadow-md mt-10">
+            <div className="all-courses-continer grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 lg:gap-5 gap-3 shadow-md lg:mt-10 md:mt-5 mt-3">
                 {
                     courses.map((course) => <SingleCourse key={course.id} course={course} handleSeesionTime={handleSeesionTime}></SingleCourse>)
                 }
