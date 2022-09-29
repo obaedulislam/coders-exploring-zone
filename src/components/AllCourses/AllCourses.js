@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import Header from '../Header/Header';
-import QuesAns from '../QuesAns/QuesAns';
 import SingleCourse from '../SingleCourse/SingleCourse';
 import './AllCourses.css'
 
@@ -27,7 +26,7 @@ const AllCourses = ({handleSeesionTime}) => {
                     courses.map((course) => <SingleCourse key={course.id} course={course} handleSeesionTime={handleSeesionTime}></SingleCourse>)
                 }
             </div>
-            <QuesAns></QuesAns>
+
         </div>
     );
 };

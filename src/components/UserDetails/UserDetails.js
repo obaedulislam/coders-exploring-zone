@@ -3,27 +3,41 @@ import './UserDetails.css'
 import user from './user.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {  faLocationDot } from '@fortawesome/free-solid-svg-icons';
+import Swal from 'sweetalert2'
+
+
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const UserDetails = ({timeOfSession}) => {
     const [sessionBreak, setSeesionBreak] = useState(0);
     
-    // useEffect(() => {
-    //     let sessionBreakFunc = handleSeesionBreak();
-    //     const getBreakTime= localStorage.getItem("break-time");
-    //     const breakValue = JSON.parse(getBreakTime);
-    //     if(breakValue){
-    //         sessionBreakFunc = breakValue;
-    //     }
-    //     else{
-            
-    //         localStorage.setItem("break-time", JSON.stringify(sessionBreakFunc));
-    //     }
-    //     setSeesionBreak(sessionBreakFunc);
-    // },[sessionBreak])
+    useEffect(() => {
+        const storedData = localStorage.getItem('break-time');
+        const parseData = JSON.parse(storedData);
+        if(parseData){
+            setSeesionBreak(parseData);
+        }
+       
+    
+    },[])
 
     const handleSeesionBreak = (e) => {
         let breakTime = e.currentTarget.value;
         setSeesionBreak(breakTime);
+        
+        localStorage.setItem("break-time", JSON.stringify(breakTime));
+
+    }
+
+
+   const activityCompleted = (e) =>{
+    toast("Activity Completed!");
+    Swal.fire(
+        'Good job!',
+        'You clicked the button!',
+        'success'
+      )
     }
 
     return (
@@ -96,11 +110,14 @@ const UserDetails = ({timeOfSession}) => {
                 </div>
                 <div className="session-time bg-orange-100 p-3 flex justify-between mt-3 rounded-md">
                     <h3 className='font-semibold'>Break Time</h3>
-                    <h4><span className='font-semibold'>{sessionBreak}</span> Minutes</h4>
+                    <h4><span className='font-semibold'>{sessionBreak? sessionBreak : 0}</span> Minutes</h4>
                 </div> 
 
                 <div className="complete-btn sm:mt-10 mt-5">
-                    <button className="btn btn-sm w-full">Activity Completed</button>
+                    <button onClick={() => activityCompleted()} className="btn btn-sm w-full">Activity Completed</button>
+                    <ToastContainer
+                    autoClose={2000}
+                    />
                 </div>
                 
             </div>

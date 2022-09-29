@@ -3,8 +3,8 @@ import virtualdom from './virtualdom.png'
 import './QuesAns.css'
 const QuesAns = () => {
     return (
-        <div className='' >
-            <div className="single-blog p-5 border border-gray-300 mt-5 shadow-lg rounded-xl bg-white">
+        <div className='w-8/12 flex flex-col items-center' >
+            <div className="single-blog p-5 border border-gray-300 mt-5 shadow-lg rounded-xl bg-white ">
                 <h3 className='text-[#3F3679] font-bold text-lg'><span className='text-2xl font-extrabold text-[#F8AF23]' >1. </span> How React Application Work?</h3>
                 <h4 className='text-xl font-semibold mt-3'>Answer:</h4>
                 <p className='mt-2'>React is a JavaScript library (not a framework) that creates user interfaces (UIs) in a predictable and efficient way using declarative code.</p>

@@ -13,7 +13,7 @@ const SingleCourse = ({course, handleSeesionTime}) => {
                 <h3 className='font-bold lg:text-xl md:text-md text-[#3F3679]'>{name}</h3>
                 <p className='text-[13px]'>Lorem ipsum dolor sit amet consectetur.</p>
                 <h5 className='font-semibold sm:mt-2 mt-1 md:text-md sm:text-sm '>For Age: {age}</h5>
-                <h4 className='font-semibold sm:mt-2 mt-1 md:text-md sm:text-sm'>Session Time: {time}</h4>
+                <h4 className='font-semibold sm:mt-2 mt-1 md:text-md sm:text-sm'>Session Time: {time}min</h4>
             </div>
             <div className="add-list mt-3">
                 <button onClick={() => handleSeesionTime(time)} className="btn btn-sm w-full">Add to List</button>
