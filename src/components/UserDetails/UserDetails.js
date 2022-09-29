@@ -27,7 +27,7 @@ const UserDetails = ({timeOfSession}) => {
     }
 
     const addSessionBreak = (e) => {
-        toast(sessionBreak + "Session Break Timer added");
+        toast( "Session Break Timer added");
     }
 
    const activityCompleted = (e) =>{
@@ -53,7 +53,7 @@ const UserDetails = ({timeOfSession}) => {
 
     return (
         <div className='md:col-span-3 col-span-12 sm:py-16 py-10 sm:px-5 px-3 overflow-hidden' >
-            <div className="user-details-sec ">
+            <div className="user-details-sec -webkit-sticky top-10">
                 <div className="user flex items-center ">
                     <div className="user-img ">
                         <img className='w-16 h-16' src={user} alt="Obaedul Islam" />

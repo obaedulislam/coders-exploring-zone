@@ -2,7 +2,7 @@ import React from 'react';
 import './SingleCourse.css'
 
 const SingleCourse = ({course, handleSeesionTime}) => {
-    const{id, name, image, age, time} = course;
+    const{id, name, image, age, time, desc} = course;
 
     return (
         <div className='lg:p-3  p-2 bg-white shadow-lg rounded-lg'>
@@ -11,7 +11,7 @@ const SingleCourse = ({course, handleSeesionTime}) => {
             </div>
             <div className="course-content pt-3">
                 <h3 className='font-bold lg:text-xl md:text-md text-[#3F3679]'>{name}</h3>
-                <p className='text-[13px]'>Lorem ipsum dolor sit amet consectetur.</p>
+                <p className='text-[14px] mt-2'>{desc.slice(0,35)}...</p>
                 <h5 className='font-semibold sm:mt-2 mt-1 md:text-md sm:text-sm '>For Age: {age}</h5>
                 <h4 className='font-semibold sm:mt-2 mt-1 md:text-md sm:text-sm'>Session Time: {time}min</h4>
             </div>

@@ -54,11 +54,19 @@ const QuesAns = () => {
                 </div>
             </div>
             <div className="single-blog p-5 border border-gray-300 mt-5 shadow-lg rounded-xl bg-white">
-                <h3 className='text-[#3F3679] font-bold text-lg'><span className='text-2xl font-extrabold text-[#050504]' >3. </span> What does useEffect do beside loading data?</h3>
+                <h3 className='text-[#3F3679] font-bold text-lg'><span className='text-2xl font-extrabold text-[#050504]' >3. </span> What does useEffect do without data load?</h3>
                 <h4 className='text-xl font-semibold mt-3'>Answer:</h4>
-                <p className='mt-2'>By using this Hook, you tell React that your component needs to do something after render. React will remember the function you passed (we’ll refer to it as our “effect”), and call it later after performing the DOM updates. In this effect, we set the document title, but we could also perform data fetching or call some other imperative API.</p>
-                <p className='mt-2'>Why is useEffect called inside a component? Placing useEffect inside the component lets us access the count state variable (or any props) right from the effect. We don’t need a special API to read it — it’s already in the function scope. Hooks embrace JavaScript closures and avoid introducing React-specific APIs where JavaScript already provides a solution.</p>
-                <p className='mt-2'>Does useEffect run after every render? Yes! By default, it runs both after the first render and after every update. (We will later talk about how to customize this.) Instead of thinking in terms of “mounting” and “updating”, you might find it easier to think that effects happen “after render”. React guarantees the DOM has been updated by the time it runs the effects. </p>  
+                <p className='mt-2'>A functional React component uses props and/or state to calculate the output. If the functional component makes calculations that don't target the output value, then these calculations are named side-effects.</p>
+                <p className='mt-2'>The useEffect Hook allows you to perform side effects in your components.</p>
+                <p className='mt-2 font-bold'>Purpose that  we use useEffect() function:</p> 
+                <ul className='list-decimal ml-7'>
+                    <li><p>Updating the Dom</p></li>
+                    <li><p>Setting up subscriptions or timers</p></li>
+                    <li><p>Some side-effects need cleanup: close a socket, clear timers.</p></li>
+                    <li><p>Fetching data from API end-points</p></li>
+                    <li><p>Get data from Local Storage</p></li>
+                    <li><p>Also use it for handle Asynchronous Task</p></li>
+                </ul> 
                 
             </div>
         </div>
