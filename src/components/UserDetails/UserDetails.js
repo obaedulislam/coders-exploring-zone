@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './UserDetails.css'
 import user from './user.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -7,9 +7,22 @@ import {  faLocationDot } from '@fortawesome/free-solid-svg-icons';
 const UserDetails = ({timeOfSession}) => {
     const [sessionBreak, setSeesionBreak] = useState(0);
     
+    // useEffect(() => {
+    //     let sessionBreakFunc = handleSeesionBreak();
+    //     const getBreakTime= localStorage.getItem("break-time");
+    //     const breakValue = JSON.parse(getBreakTime);
+    //     if(breakValue){
+    //         sessionBreakFunc = breakValue;
+    //     }
+    //     else{
+            
+    //         localStorage.setItem("break-time", JSON.stringify(sessionBreakFunc));
+    //     }
+    //     setSeesionBreak(sessionBreakFunc);
+    // },[sessionBreak])
 
     const handleSeesionBreak = (e) => {
-        const breakTime = e.currentTarget.value;
+        let breakTime = e.currentTarget.value;
         setSeesionBreak(breakTime);
     }
 
