@@ -9,7 +9,7 @@ const UserDetails = ({timeOfSession}) => {
     
 
     const handleSeesionBreak = (e) => {
-        const breakTime = e.target.value;
+        const breakTime = e.currentTarget.value;
         setSeesionBreak(breakTime);
     }
 
