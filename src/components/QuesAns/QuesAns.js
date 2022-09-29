@@ -3,7 +3,8 @@ import virtualdom from './virtualdom.png'
 import './QuesAns.css'
 const QuesAns = () => {
     return (
-        <div className='w-8/12 flex flex-col items-center' >
+        <div className='lg:px-20 md:px-8 sm:px-5 px-3 md:py-6 sm:py-5 py-5  md:col-span-9 col-span-12 bg-orange-100  ' >
+            <h2 className='font-bold lg:text-2xl text-xl'>Some Iportant Q & A we discuss in this Session:</h2>
             <div className="single-blog p-5 border border-gray-300 mt-5 shadow-lg rounded-xl bg-white ">
                 <h3 className='text-[#3F3679] font-bold text-lg'><span className='text-2xl font-extrabold text-[#F8AF23]' >1. </span> How React Application Work?</h3>
                 <h4 className='text-xl font-semibold mt-3'>Answer:</h4>
@@ -22,20 +23,20 @@ const QuesAns = () => {
                     <p className='text-center mt-2'>Fig: React Virtual & Real DOM Cmparison</p>
                 </div>
             </div>
-            <div className="single-blog p-5 border border-gray-300 mt-5 shadow-lg rounded-xl bg-white">
+            <div className="single-blog p-5 border border-gray-300 mt-5 shadow-lg rounded-xl bg-white ">
                 <h3 className='text-[#3F3679] font-bold text-lg'><span className='text-2xl font-extrabold text-[#F8AF23]' >2. </span> Difference between Props vs State</h3>
                 <h4 className='text-xl font-semibold mt-3'>Answer:</h4>
                 <div className="diff-table mt-3 ">
-                    <div className="props grid grid-cols-12 gap-4">
+                    <div className="props grid grid-cols-12 sm:gap-4 gap-2">
                         <div className="props col-span-6 border border-gray-100">
                             <div className="t-head bg-orange-100 py-3">
                                 <h2 className='font-bold uppercase text-center'>Props</h2>
                             </div>
                             <div className="cont p-3">
                             <p>1. The Data is passed from one component to another.</p>
-                            <p>2. It is Immutable (cannot be modified).</p>
-                            <p>3. Props can be used with state and functional components.</p>
-                            <p>4. Props are read-only.</p>
+                            <p className='mt-2'>2. It is Immutable (cannot be modified).</p>
+                            <p className='mt-2'>3. Props can be used with state and functional components.</p>
+                            <p className='mt-2'>4. Props are read-only.</p>
                             </div>
                         </div>
                         <div className="state col-span-6 col-span-6 border border-gray-100">
@@ -44,16 +45,16 @@ const QuesAns = () => {
                             </div>
                             <div className="cont p-3">
                             <p>1. The Data is passed within the component only..</p>
-                            <p>2. It is Mutable ( can be modified).</p>
-                            <p>3. State can be used only with the state components/class component (Before 16.0).</p>
-                            <p>4. State is both read and write.</p>
+                            <p className='mt-2'>2. It is Mutable ( can be modified).</p>
+                            <p className='mt-2'>3. State can be used only with the state components/class component (Before 16.0).</p>
+                            <p className='mt-2'>4. State is both read and write.</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
             <div className="single-blog p-5 border border-gray-300 mt-5 shadow-lg rounded-xl bg-white">
-                <h3 className='text-[#3F3679] font-bold text-lg'><span className='text-2xl font-extrabold text-[#F8AF23]' >3. </span> What does useEffect do beside loading data?</h3>
+                <h3 className='text-[#3F3679] font-bold text-lg'><span className='text-2xl font-extrabold text-[#050504]' >3. </span> What does useEffect do beside loading data?</h3>
                 <h4 className='text-xl font-semibold mt-3'>Answer:</h4>
                 <p className='mt-2'>By using this Hook, you tell React that your component needs to do something after render. React will remember the function you passed (we’ll refer to it as our “effect”), and call it later after performing the DOM updates. In this effect, we set the document title, but we could also perform data fetching or call some other imperative API.</p>
                 <p className='mt-2'>Why is useEffect called inside a component? Placing useEffect inside the component lets us access the count state variable (or any props) right from the effect. We don’t need a special API to read it — it’s already in the function scope. Hooks embrace JavaScript closures and avoid introducing React-specific APIs where JavaScript already provides a solution.</p>

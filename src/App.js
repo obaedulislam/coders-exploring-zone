@@ -15,7 +15,7 @@ function App() {
   }
 
   return (
-    <div className="App grid grid-cols-12 gap-3 h-full overflow-hidden">
+    <div className="App grid grid-cols-12 h-full overflow-hidden">
       <AllCourses  handleSeesionTime={handleSeesionTime}></AllCourses>
       <UserDetails timeOfSession={timeOfSession}></UserDetails>
       <QuesAns></QuesAns>

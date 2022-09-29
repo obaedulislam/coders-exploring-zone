@@ -18,31 +18,42 @@ const UserDetails = ({timeOfSession}) => {
         if(parseData){
             setSeesionBreak(parseData);
         }
-       
-    
-    },[])
+    },[sessionBreak])
 
     const handleSeesionBreak = (e) => {
         let breakTime = e.currentTarget.value;
         setSeesionBreak(breakTime);
-        
         localStorage.setItem("break-time", JSON.stringify(breakTime));
-
     }
 
+    const addSessionBreak = (e) => {
+        toast(sessionBreak + "Session Break Timer added");
+    }
 
    const activityCompleted = (e) =>{
-    toast("Activity Completed!");
-    Swal.fire(
-        'Good job!',
-        'You clicked the button!',
-        'success'
-      )
+    
+    Swal.fire({
+        title: 'Are you Completeed This Session?',
+        text: "You won't be able to start new session within 7 days.",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Yes, I Completed!'
+      }).then((result) => {
+        if (result.isConfirmed) {
+          Swal.fire(
+            'Completed 💪',
+            'Thanks,👍 for stay with us',
+            'success'
+          )
+        }
+      })
     }
 
     return (
-        <div className='md:col-span-3 col-span-12 sm:py-10 py-8 sm:px-5 px-3 overflow-hidden' >
-            <div className="user-details-sec">
+        <div className='md:col-span-3 col-span-12 sm:py-16 py-10 sm:px-5 px-3 overflow-hidden' >
+            <div className="user-details-sec ">
                 <div className="user flex items-center ">
                     <div className="user-img ">
                         <img className='w-16 h-16' src={user} alt="Obaedul Islam" />
@@ -54,7 +65,7 @@ const UserDetails = ({timeOfSession}) => {
                 </div>
 
                 {/* Skills */}
-                <div className="coding-skill p-3 bg-orange-100 grid grid-cols-12 gap-2 rounded-xl mt-5">
+                <div className="coding-skill p-3 bg-orange-100 grid grid-cols-12 gap-2 rounded-xl mt-8">
                     <div className="java-script text-center col-span-4">
                         <h2 className='text-2xl font-bold '>89<span className='text-sm'>%</span></h2>
                         <h5 className='sm:text-[14px] text-[12px] font-semibold -mt-1'>JavaScript</h5>
@@ -70,31 +81,32 @@ const UserDetails = ({timeOfSession}) => {
                 </div>
 
                 {/* Session Break Time */}
-                <div className="add-break sm:mt-8 mt-4">
+                <div className="add-break sm:mt-8 mt-8">
                     <h2 className='sm:text-xl text-lg  font-semibold'>Session Break</h2>
                     <div className="break-btn flex justify-between mt-3">
                         <div className="second-btn">
-                            <button onClick={e => handleSeesionBreak(e) } value={10}  className=' w-12 h-12 font-bold transition delay-200 ease-in-out text-black hover:bg-orange-100 rounded-full bg-[#F8AF23]'><span  className='text-lg'>10</span><span className='text-sm'>m</span></button>
+                            <button onClick={e => {handleSeesionBreak(e); addSessionBreak(e)} } value={10}  className=' w-12 h-12 font-bold transition delay-200 ease-in-out text-black hover:bg-orange-100 rounded-full bg-[#F8AF23]'><span  className='text-lg'>10</span><span className='text-sm'>m</span></button>
                         </div>
                         {/* Button End */}
                         
                         <div className="second-btn">
-                            <button  onClick={e => handleSeesionBreak(e) } value={20} className=' w-12 h-12 font-bold transition delay-200 ease-in-out text-black hover:bg-orange-100 rounded-full bg-[#F8AF23]'><span className='text-lg'>20</span><span className='text-sm'>m</span></button>
+                            <button  onClick={e => {handleSeesionBreak(e); addSessionBreak(e)} } value={20} className=' w-12 h-12 font-bold transition delay-200 ease-in-out text-black hover:bg-orange-100 rounded-full bg-[#F8AF23]'><span className='text-lg'>20</span><span className='text-sm'>m</span></button>
                         </div>
                         {/* Button End */}
                         
                         <div className="second-btn">
-                            <button  onClick={e => handleSeesionBreak(e) } value={30}  className=' w-12 h-12 font-bold transition delay-200 ease-in-out text-black hover:bg-orange-100 rounded-full bg-[#F8AF23]'><span className='text-lg'>30</span><span className='text-sm'>m</span></button>
+                            <button  onClick={e => {handleSeesionBreak(e); addSessionBreak(e)} } value={30}  className=' w-12 h-12 font-bold transition delay-200 ease-in-out text-black hover:bg-orange-100 rounded-full bg-[#F8AF23]'><span className='text-lg'>30</span><span className='text-sm'>m</span></button>
                         </div>
                         {/* Button End */}
                         
                         <div className="second-btn">
-                            <button  onClick={e => handleSeesionBreak(e) } value={40} className=' w-12 h-12 font-bold transition delay-200 ease-in-out text-black hover:bg-orange-100 rounded-full bg-[#F8AF23]'><span className='text-lg'>40</span><span className='text-sm'>m</span></button>
+                            <button  onClick={e => {handleSeesionBreak(e); addSessionBreak(e)} } value={40} className=' w-12 h-12 font-bold transition delay-200 ease-in-out text-black hover:bg-orange-100 rounded-full bg-[#F8AF23]'><span className='text-lg'>40</span><span className='text-sm'>m</span></button>
+                            <ToastContainer autoClose={2000} />
                         </div>
                         {/* Button End */}
                         
                         <div className="second-btn">
-                            <button  onClick={e => handleSeesionBreak(e) } value={50} className=' w-12 h-12 font-bold transition delay-200 ease-in-out text-black hover:bg-orange-100 rounded-full bg-[#F8AF23]'><span className='text-lg'>50</span><span className='text-sm'>m</span></button>
+                            <button  onClick={e => {handleSeesionBreak(e); addSessionBreak(e)} } value={50} className=' w-12 h-12 font-bold transition delay-200 ease-in-out text-black hover:bg-orange-100 rounded-full bg-[#F8AF23]'><span className='text-lg'>50</span><span className='text-sm'>m</span></button>
                         </div>
                         {/* Button End */}
                         
@@ -102,7 +114,7 @@ const UserDetails = ({timeOfSession}) => {
                 </div>
 
                 {/* Exercise Details */}
-                <div className="exercise-details  sm:mt-8 mt-4">
+                <div className="exercise-details  sm:mt-8 mt-8">
                 <h2 className='sm:text-xl text-lg  font-semibold mt-3'>Session Details</h2>
                 <div className="session-time bg-orange-100 p-3 flex justify-between mt-3 rounded-md">
                     <h3 className='font-semibold'>Session Time</h3>
@@ -114,10 +126,8 @@ const UserDetails = ({timeOfSession}) => {
                 </div> 
 
                 <div className="complete-btn sm:mt-10 mt-5">
-                    <button onClick={() => activityCompleted()} className="btn btn-sm w-full">Activity Completed</button>
-                    <ToastContainer
-                    autoClose={2000}
-                    />
+                    <button onClick={() => activityCompleted()} className="btn btn-md text-lg w-full ">Session Completed</button>
+                    
                 </div>
                 
             </div>
